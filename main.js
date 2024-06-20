@@ -1,4 +1,5 @@
-import { normalizeURL, crawl } from "./crawl.js";
+import { crawl } from "./crawl.js";
+import { printReport } from "./report.js"
 
 async function main() {
     const args = process.argv
@@ -13,7 +14,7 @@ async function main() {
     const baseURL = new URL(args[0])
     console.log(`Starting crawl with URL: ${baseURL}`)
     const output = await crawl(baseURL)
-    console.log(output)
+    printReport(output)
 }
 
 main()
